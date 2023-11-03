@@ -1,0 +1,80 @@
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "./globals.css";
+import Footer from "./_components/Footer";
+import Navbar from "./_components/Navbar";
+import Script from "next/script";
+
+const inter = Inter({ subsets: ["latin"] });
+
+export const metadata: Metadata = {
+  title: "Kebabhan",
+  description:
+    "Hi I'm Farhan, a frontend engineer who loves to working on high standard apps",
+  keywords: [
+    "developer",
+    "frontend",
+    "programming",
+    "web developer",
+    "frontend developer",
+    "programmer",
+    "react",
+  ],
+  authors: [
+    {
+      name: "Tengku Farhan",
+      url: "https://kebabhan.vercel.app",
+    },
+  ],
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <head>
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="96x96"
+          href="/favicon-96x96.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-16x16.png"
+        />
+      </head>
+      <body className={inter.className}>
+        <main className="w-full flex flex-col items-center">
+          <div className="w-full max-w-2xl flex flex-col">
+            <Navbar />
+            {children}
+            <Footer />
+          </div>
+        </main>
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-0WR3LJ2YHC"
+        />
+        <Script id="google-analytics">
+          {` window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0WR3LJ2YHC');`}
+        </Script>
+      </body>
+    </html>
+  );
+}
