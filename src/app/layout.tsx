@@ -54,6 +54,21 @@ export default function RootLayout({
           sizes="16x16"
           href="/favicon-16x16.png"
         />
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-0WR3LJ2YHC"
+        />
+        <meta
+          name="google-site-verification"
+          content="7X1vfPqLdiWlvgEI0w7LEe9g-m30JvVefpujJ4qDK4Y"
+        />
+        <Script id="google-analytics">
+          {` window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0WR3LJ2YHC');`}
+        </Script>
       </head>
       <body className={inter.className}>
         <main className="w-full flex flex-col items-center">
@@ -63,17 +78,6 @@ export default function RootLayout({
             <Footer />
           </div>
         </main>
-        <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-0WR3LJ2YHC"
-        />
-        <Script id="google-analytics">
-          {` window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-0WR3LJ2YHC');`}
-        </Script>
       </body>
     </html>
   );
