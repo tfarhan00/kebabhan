@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <div className="w-full flex flex-col pb-12">
       {/* Title */}
-      <div className="py-2 flex items-center font-medium justify-between border-b border-black px-4 md:px-0 text-sm whitespace-nowrap">
+      <div className="py-2 flex items-center font-medium justify-between px-4 md:px-0 text-sm whitespace-nowrap">
         <div className="flex items-center gap-3">
           <div className="h-3 aspect-square bg-black rounded-full"></div>
           <div className="flex items-center md:gap-1.5">
@@ -110,6 +110,7 @@ export default function Hero() {
       <div className="mt-12 px-4 md:px-0 font-medium">
         <div className="w-full flex items-center justify-between gap-4">
           <p>recent</p>
+          <div className="grow h-[1px] bg-black"></div>
           <h3>works</h3>
         </div>
         <div className="flex flex-col pt-6 md:pt-8 gap-5">
@@ -117,6 +118,7 @@ export default function Hero() {
             <div key={work.title} className="flex flex-col items-center gap-4">
               <a
                 className="overflow-hidden w-full h-[300px] md:h-[400px] relative"
+                target="_blank"
                 href={work.link}
               >
                 {work.showcase_img.type === "video" ? (
@@ -146,7 +148,11 @@ export default function Hero() {
               </a>
               <div className="w-full flex flex-col gap-2 items-start justify-between">
                 <div className="w-full flex items-center justify-between gap-3">
-                  <a href={work.link} className="flex items-center gap-1">
+                  <a
+                    href={work.link}
+                    target="_blank"
+                    className="flex items-center gap-1"
+                  >
                     {work.title}{" "}
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -178,6 +184,7 @@ export default function Hero() {
       <div className="pt-14 px-4 md:px-0 font-medium">
         <div className="w-full flex items-center justify-between gap-4">
           <p>tech</p>
+          <div className="grow h-[1px] bg-black"></div>
           <h3>stacks</h3>
         </div>
 
@@ -194,10 +201,16 @@ export default function Hero() {
                   loading="lazy"
                 />
               </div>
-              <a href={stack.link} className="text-sm md:text-base">
+              <a
+                href={stack.link}
+                target="_blank"
+                className="text-sm md:text-base"
+              >
                 {stack.name}
               </a>
-              <p className="ml-auto text-black/40 text-sm">{stack.desc}</p>
+              <p className="ml-auto text-black/40 text-xs md:text-sm">
+                {stack.desc}
+              </p>
             </div>
           ))}
         </div>
@@ -207,6 +220,7 @@ export default function Hero() {
       <div className="pt-14 px-4 md:px-0 font-medium">
         <div className="w-full flex items-center justify-between gap-4">
           <p>latest</p>
+          <div className="grow h-[1px] bg-black"></div>
           <h3>articles</h3>
         </div>
 
@@ -230,6 +244,7 @@ export default function Hero() {
               </svg>
               <a
                 href={write.link}
+                target="_blank"
                 className="uppercase text-sm hover:underline"
               >
                 {write.title}

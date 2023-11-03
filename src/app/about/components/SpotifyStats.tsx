@@ -17,6 +17,7 @@ export default async function SpotifyStats() {
       </div>
       <a
         href={song.songUrl}
+        target="_blank"
         className="flex items-center gap-1 hover:underline"
       >
         <p className="max-w-[180px] truncate">{song.title}</p>

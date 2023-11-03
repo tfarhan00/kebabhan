@@ -6,11 +6,9 @@ export default function AboutHero() {
   return (
     <div className="w-full flex flex-col pb-12">
       {/* Title */}
-      <div className="py-2 flex items-center font-medium justify-between border-b border-black px-4 md:px-0 text-sm whitespace-nowrap">
+      <div className="py-2 flex items-center font-medium justify-between px-4 md:px-0 text-sm whitespace-nowrap">
         <SpotifyStats />
-        <a className="flex items-center gap-1 hover:underline font-normal">
-          <p>(づ ◕‿◕ )づ</p>
-        </a>
+        <p>(づ ◕‿◕ )づ</p>
       </div>
 
       {/* Bio */}
@@ -99,12 +97,14 @@ export default function AboutHero() {
         <p className="text-lg font-medium">Skills</p>
         <div className="flex gap-2 flex-wrap">
           {skills.map((skill) => (
-            <div
+            <a
               key={skill.link}
+              href={skill.link}
+              target="_blank"
               className="flex items-center gap-2 px-2 border border-black py-0.5 text-sm"
             >
               {skill.name}
-            </div>
+            </a>
           ))}
         </div>
       </div>
