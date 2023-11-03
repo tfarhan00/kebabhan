@@ -1,0 +1,39 @@
+{
+  "name": "kebabhan",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "clean": "rimraf .next",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@rive-app/react-canvas": "^4.7.0",
+    "gsap": "^3.12.4",
+    "jotai": "^2.6.1",
+    "leva": "^0.9.35",
+    "matter-js": "^0.19.0",
+    "next": "14.0.1",
+    "next-themes": "^0.2.1",
+    "react": "^18",
+    "react-dom": "^18",
+    "sharp": "^0.32.6",
+    "tailwind-merge": "^2.2.0",
+    "valtio": "^1.13.0"
+  },
+  "devDependencies": {
+    "@types/matter-js": "^0.19.5",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10.0.1",
+    "eslint": "^8",
+    "eslint-config-next": "14.0.1",
+    "postcss": "^8",
+    "rimraf": "^5.0.5",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}
