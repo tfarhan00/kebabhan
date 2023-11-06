@@ -13,20 +13,20 @@ export default function AboutHero() {
 
       {/* Bio */}
       <div className="flex flex-col pt-10 px-4 md:px-0">
-        <div className="flex items-center gap-2 font-medium">
+        <div className="flex flex-col items-start font-medium">
           <h2 className="text-lg">Tengku Farhan</h2>
-          <p className="text-black/50">@kebabhann</p>
+          <p className="text-black/50">@kebabhan</p>
         </div>
       </div>
 
       {/* At a glance */}
-      <div className="flex flex-col gap-5 pt-12 font-medium px-4 md:px-0">
-        <p className="text-lg">At a glance</p>
-        <p className="text-black/50">
+      <div className="flex flex-col gap-4 pt-12 font-medium px-4 md:px-0">
+        <p className="text-black/50">At a glance</p>
+        <p>
           Hi there! I&apos;m a frontend engineer building{" "}
           <a
             href="https://unbound-studio.vercel.app/"
-            className="text-black inline-block"
+            className="text-black/50 inline-block"
           >
             @unboundvisual
           </a>{" "}
@@ -35,9 +35,9 @@ export default function AboutHero() {
       </div>
 
       {/* Brief */}
-      <div className="flex flex-col gap-5 pt-10 font-medium px-4 md:px-0">
-        <p className="text-lg">Brief</p>
-        <p className="text-black/50">
+      <div className="flex flex-col gap-4 pt-12 font-medium px-4 md:px-0">
+        <p className="font-medium text-black/50">Brief</p>
+        <p>
           1+ years of experience in web app development with a focus on creating
           visually appealing and user-friendly websites for clients in various
           industries. Strong project management skills, ability to effectively
@@ -46,9 +46,9 @@ export default function AboutHero() {
       </div>
 
       {/* Experience */}
-      <div className="w-full flex flex-col gap-5 pt-10 font-medium px-4 md:px-0">
-        <p className="text-lg">Experience</p>
-        <div className="flex flex-col items-start gap-10 pb-8 w-full">
+      <div className="w-full flex flex-col gap-4 pt-12 font-medium px-4 md:px-0">
+        <p className="font-medium text-black/50">Experience</p>
+        <div className="flex flex-col items-start gap-10 w-full">
           {experiences.map((experience, idx) => (
             <div
               key={idx}
@@ -72,9 +72,9 @@ export default function AboutHero() {
       </div>
 
       {/* Education */}
-      <div className="flex flex-col gap-5 pt-10 font-medium px-4 md:px-0">
-        <p className="text-lg">Education</p>
-        <div className="flex flex-col items-start gap-10 pb-8">
+      <div className="flex flex-col gap-4 pt-12 font-medium px-4 md:px-0">
+        <p className="font-medium text-black/50">Education</p>
+        <div className="flex flex-col items-start gap-10">
           <div className="flex items-baseline gap-4 md:gap-6 w-full">
             <div className="flex flex-col items-start gap-2 text-black w-full">
               <div className="w-full flex flex-col md:flex-row gap-2 items-start md:items-center justify-between">
@@ -94,7 +94,7 @@ export default function AboutHero() {
 
       {/* Skills */}
       <div className="flex flex-col gap-5 pt-10 px-4 md:px-0">
-        <p className="text-lg font-medium">Skills</p>
+        <p className="font-medium text-black/50">Skills</p>
         <div className="flex gap-2 flex-wrap">
           {skills.map((skill) => (
             <a

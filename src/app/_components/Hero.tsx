@@ -41,12 +41,12 @@ export default function Hero() {
       </div>
       {/* Desc */}
       <div className="pt-10 px-4 md:px-0">
-        <p className="text-lg md:text-xl font-medium">
+        <p className="text-lg md:text-xl font-medium tracking-tight">
           Hi, I&apos;m Farhan!{" "}
           <span className="inline-bloxk text-black/40">
             {" "}
-            {"-->"} My passion for web app development has led me to work in
-            various fields, from{" "}
+            <span className="tracking-normal">{"-->"}</span> My passion for web
+            app development has led me to work in various fields, from{" "}
             <span className="inline-flex text-black/80 items-center gap-1">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -100,7 +100,7 @@ export default function Hero() {
       <div className="pt-6 px-4 md:px-0">
         <a
           href="mailto:farhanalryan2@gmail.com"
-          className="bg-black text-white px-4 rounded-full py-1.5 font-medium text-sm"
+          className="bg-white border border-black text-black px-4 rounded-full py-1.5 font-medium text-sm"
         >
           Discuss a project
         </a>
