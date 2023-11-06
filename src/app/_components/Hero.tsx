@@ -19,23 +19,8 @@ export default function Hero() {
         </div>
         <a
           href="mailto:farhanalryan2@gmail.com"
-          className="text-sm font-normal flex items-center gap-1 hover:underline"
+          className="text-xs font-normal flex items-center gap-1 hover:underline bg-green-400 rounded-full text-white px-3 py-1"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="lucide lucide-arrow-up-right"
-          >
-            <path d="M7 7h10v10" />
-            <path d="M7 17 17 7" />
-          </svg>
           <p>available for work</p>
         </a>
       </div>
@@ -97,12 +82,27 @@ export default function Hero() {
 
       {/* Hire me please :) */}
 
-      <div className="pt-6 px-4 md:px-0">
+      <div className="pt-6 px-4 md:px-0 flex items-start">
         <a
           href="mailto:farhanalryan2@gmail.com"
-          className="bg-white border border-black text-black px-4 rounded-full py-1.5 font-medium text-sm"
+          className="bg-white border border-black text-black px-4 rounded-full py-1.5 font-medium text-sm flex items-center gap-2"
         >
           Discuss a project
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="lucide lucide-arrow-up-right"
+          >
+            <path d="M7 7h10v10" />
+            <path d="M7 17 17 7" />
+          </svg>
         </a>
       </div>
 

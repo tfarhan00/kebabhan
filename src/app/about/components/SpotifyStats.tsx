@@ -5,7 +5,11 @@ export default async function SpotifyStats() {
   const song = await getSpotifySong();
   if (song === null) return;
   return (
-    <div className="flex items-center gap-3">
+    <a
+      href={song.songUrl}
+      target="_blank"
+      className="flex items-center gap-3 border border-black px-2 py-1 rounded-full text-xs hover:bg-black hover:text-white group"
+    >
       <div className="h-5 aspect-square rounded-full overflow-hidden relative">
         <Image
           src={song.coverUrl}
@@ -15,14 +19,12 @@ export default async function SpotifyStats() {
           className="w-full h-full object-cover"
         />
       </div>
-      <a
-        href={song.songUrl}
-        target="_blank"
-        className="flex items-center gap-1 hover:underline"
-      >
+      <div className="flex items-center gap-1">
         <p className="max-w-[180px] truncate">{song.title}</p>
         <span className="hidden md:inline">-</span>
-        <p className="text-black/50 hidden md:inline">{song.artist}</p>
+        <p className="text-black/50 group-hover:text-white/50 hidden md:inline">
+          {song.artist}
+        </p>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="16"
@@ -38,7 +40,7 @@ export default async function SpotifyStats() {
           <path d="M7 7h10v10" />
           <path d="M7 17 17 7" />
         </svg>
-      </a>
-    </div>
+      </div>
+    </a>
   );
 }
