@@ -109,9 +109,7 @@ export default function Hero() {
       {/* Works */}
       <div className="mt-12 px-4 md:px-0 font-medium">
         <div className="w-full flex items-center justify-between gap-4">
-          <p>recent</p>
-          <div className="grow h-[1px] bg-black"></div>
-          <h3>works</h3>
+          <p>Recent Works</p>
         </div>
         <div className="flex flex-col pt-6 md:pt-8 gap-5">
           {works.map((work) => (
@@ -183,9 +181,7 @@ export default function Hero() {
       {/* Stacks */}
       <div className="pt-14 px-4 md:px-0 font-medium">
         <div className="w-full flex items-center justify-between gap-4">
-          <p>tech</p>
-          <div className="grow h-[1px] bg-black"></div>
-          <h3>stacks</h3>
+          <p>Tech Stacks</p>
         </div>
 
         <div className="flex flex-col gap-8 pt-6 md:pt-8 ">
@@ -219,9 +215,7 @@ export default function Hero() {
       {/* Writings */}
       <div className="pt-14 px-4 md:px-0 font-medium">
         <div className="w-full flex items-center justify-between gap-4">
-          <p>latest</p>
-          <div className="grow h-[1px] bg-black"></div>
-          <h3>articles</h3>
+          <p>Latest Article</p>
         </div>
 
         <div className="flex flex-col pt-6 md:pt-8 ">
