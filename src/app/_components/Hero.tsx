@@ -9,7 +9,6 @@ export default function Hero() {
       {/* Title */}
       <div className="py-2 flex items-center font-medium justify-between px-4 md:px-0 text-sm whitespace-nowrap">
         <div className="flex items-center gap-3">
-          <div className="h-3 aspect-square bg-black rounded-full"></div>
           <div className="flex items-center md:gap-1.5">
             <p>kebabhan</p>
             <p className="text-black/40 hidden md:inline">
@@ -108,7 +107,9 @@ export default function Hero() {
 
       {/* Works */}
       <div className="mt-12 px-4 md:px-0 font-medium">
-        <div className="w-full flex items-center justify-between gap-4">
+        <div className="w-full flex items-center justify-start gap-3 text-black/50">
+        <div className="bg-black/50 h-2 aspect-square rounded-full">
+          </div>
           <p>Recent Works</p>
         </div>
         <div className="flex flex-col pt-6 md:pt-8 gap-5">
@@ -180,7 +181,9 @@ export default function Hero() {
 
       {/* Stacks */}
       <div className="pt-14 px-4 md:px-0 font-medium">
-        <div className="w-full flex items-center justify-between gap-4">
+        <div className="w-full flex items-center justify-start gap-3 text-black/50">
+        <div className="bg-black/50 h-2 aspect-square rounded-full">
+          </div>
           <p>Tech Stacks</p>
         </div>
 
@@ -214,7 +217,9 @@ export default function Hero() {
 
       {/* Writings */}
       <div className="pt-14 px-4 md:px-0 font-medium">
-        <div className="w-full flex items-center justify-between gap-4">
+        <div className="w-full flex items-center justify-start gap-3   text-black/50">
+          <div className="bg-black/50 h-2 aspect-square rounded-full">
+          </div>
           <p>Latest Article</p>
         </div>
 
