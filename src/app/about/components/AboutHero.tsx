@@ -101,7 +101,7 @@ export default function AboutHero() {
               key={skill.link}
               href={skill.link}
               target="_blank"
-              className="flex items-center gap-2 px-2 border border-black py-0.5 text-sm"
+              className="flex items-center gap-2 px-2 border border-black py-0.5 text-sm rounded-full"
             >
               {skill.name}
             </a>
