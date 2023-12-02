@@ -72,7 +72,7 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <main className="w-full flex flex-col items-center">
-          <div className="w-full max-w-2xl flex flex-col">
+          <div className="w-full max-w-xl flex flex-col">
             <Navbar />
             {children}
             <Footer />
