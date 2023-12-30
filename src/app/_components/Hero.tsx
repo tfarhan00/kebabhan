@@ -34,15 +34,9 @@ export default function Hero() {
             {" "}
             <span className="tracking-normal">{"-->"}</span> As a passionate
             developer I&apos;ve been working through various fields of web apps,
-            from{" "}
-            <span className="inline-flex text-black/80 items-center gap-1">
-              <span className="mt-1 md:mt-0.5">Web3</span>
-            </span>{" "}
-            to{" "}
-            <span className="inline-flex text-black/80 items-center gap-1">
-              <span className="mt-1 md:mt-0.5">Enterprise</span>
-            </span>
-            . I strive to push the boundaries of software and create meaningful
+            from <span className="inline-flex text-black/80">Web3</span> to{" "}
+            <span className="inline-flex text-black/80">Enterprise</span>. I
+            strive to push the boundaries of software and create meaningful
             experiences for my clients and their users.
           </span>
         </p>
