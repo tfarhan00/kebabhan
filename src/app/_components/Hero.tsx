@@ -42,8 +42,8 @@ export default function Hero() {
             <span className="inline-flex text-black/80 items-center gap-1">
               <span className="mt-1 md:mt-0.5">Enterprise</span>
             </span>
-            .<br />I strive to push the boundaries of software and create
-            meaningful experiences for my clients and their users.
+            . I strive to push the boundaries of software and create meaningful
+            experiences for my clients and their users.
           </span>
         </p>
       </div>
