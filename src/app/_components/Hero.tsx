@@ -87,7 +87,7 @@ export default function Hero() {
       <div className="pt-6 px-4 md:px-0 flex items-start">
         <a
           href="mailto:farhanalryan2@gmail.com"
-          className="bg-white border hover:bg-neutral-100 text-black px-4 rounded-full py-1.5 font-medium text-sm flex items-center gap-2"
+          className="bg-neutral-100 hover:bg-neutral-200 text-black px-4 rounded-full py-1.5 font-medium text-sm flex items-center gap-2"
         >
           Discuss a project
           <svg
