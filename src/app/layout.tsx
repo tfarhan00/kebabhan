@@ -4,13 +4,15 @@ import "./globals.css";
 import Footer from "./_components/Footer";
 import Navbar from "./_components/Navbar";
 import Script from "next/script";
+import { Provider as JotaiProvider } from "jotai";
+import MainWidthContainer from "./_components/MainWidthContainer";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Kebabhan",
+  title: "Kebabhan - Interactive Front-End Developer",
   description:
-    "Hi I'm Farhan, a frontend engineer who loves to working on high standard apps",
+    "Hi I'm Farhan, a frontend developer who loves to work on high standard apps",
   keywords: [
     "developer",
     "frontend",
@@ -19,6 +21,12 @@ export const metadata: Metadata = {
     "frontend developer",
     "programmer",
     "react",
+    "nextjs",
+    "creative",
+    "threejs",
+    "gsap",
+    "web animation",
+    "interactive developer",
   ],
   authors: [
     {
@@ -71,13 +79,15 @@ export default function RootLayout({
         </Script>
       </head>
       <body className={inter.className}>
-        <main className="w-full flex flex-col items-center">
-          <div className="w-full max-w-xl flex flex-col">
+        <JotaiProvider>
+          <main className="w-full flex flex-col items-center">
             <Navbar />
             {children}
-            <Footer />
-          </div>
-        </main>
+            <MainWidthContainer>
+              <Footer />
+            </MainWidthContainer>
+          </main>
+        </JotaiProvider>
       </body>
     </html>
   );

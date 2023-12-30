@@ -12,7 +12,7 @@ export default function Hero() {
           <div className="flex items-center md:gap-1.5">
             <p>kebabhan</p>
             <p className="text-black/40 hidden md:inline">
-              {"// frontend engineer"}
+              {"// frontend developer"}
             </p>
           </div>
         </div>
@@ -32,62 +32,27 @@ export default function Hero() {
           Hi, I&apos;m Farhan!{" "}
           <span className="inline-bloxk text-black/40">
             {" "}
-            <span className="tracking-normal">{"-->"}</span> My passion for web
-            app development has led me to work in various fields, from{" "}
+            <span className="tracking-normal">{"-->"}</span> As a passionate
+            developer I&apos;ve been working through various fields of web apps,
+            from{" "}
             <span className="inline-flex text-black/80 items-center gap-1">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="lucide lucide-blocks"
-              >
-                <rect width="7" height="7" x="14" y="3" rx="1" />
-                <path d="M10 21V8a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1H3" />
-              </svg>
               <span className="mt-1 md:mt-0.5">Web3</span>
             </span>{" "}
             to{" "}
             <span className="inline-flex text-black/80 items-center gap-1">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="lucide lucide-building-2"
-              >
-                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z" />
-                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2" />
-                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2" />
-                <path d="M10 6h4" />
-                <path d="M10 10h4" />
-                <path d="M10 14h4" />
-                <path d="M10 18h4" />
-              </svg>
               <span className="mt-1 md:mt-0.5">Enterprise</span>
-            </span>{" "}
-            apps. I strive to push the boundaries of software and create
+            </span>
+            .<br />I strive to push the boundaries of software and create
             meaningful experiences for my clients and their users.
           </span>
         </p>
       </div>
 
       {/* Hire me please :) */}
-
       <div className="pt-6 px-4 md:px-0 flex items-start">
         <a
           href="mailto:farhanalryan2@gmail.com"
-          className="bg-neutral-100 hover:bg-neutral-200 text-black px-4 rounded-full py-1.5 font-medium text-sm flex items-center gap-2"
+          className="bg-black hover:bg-neutral-700 text-white px-4 rounded-full py-1.5 font-medium text-sm flex items-center gap-2"
         >
           Discuss a project
           <svg
@@ -109,10 +74,9 @@ export default function Hero() {
       </div>
 
       {/* Works */}
-      <div className="mt-12 px-4 md:px-0 font-medium">
-        <div className="w-full flex items-center justify-start gap-3 text-black/50">
-          <div className="font-medium text-black/50 border rounded-full px-3 py-1 text-sm flex items-center gap-2">
-            <div className="bg-black/50 h-1 aspect-square rounded-full"></div>
+      <div className="mt-20 px-4 md:px-0 font-medium">
+        <div className="w-full flex items-center justify-start gap-3">
+          <div className="font-medium  rounded-full px-3 py-1 text-sm flex items-center gap-2 bg-blue-50 text-blue-500">
             <p>Recent Work</p>
           </div>
         </div>
@@ -189,9 +153,8 @@ export default function Hero() {
 
       {/* Stacks */}
       <div className="pt-14 px-4 md:px-0 font-medium">
-        <div className="w-full flex items-center justify-start gap-3 text-black/50">
-          <div className="font-medium text-black/50 border rounded-full px-3 py-1 text-sm flex items-center gap-2">
-            <div className="bg-black/50 h-1 aspect-square rounded-full"></div>
+        <div className="w-full flex items-center justify-start gap-3">
+          <div className="font-medium  rounded-full px-3 py-1 text-sm flex items-center gap-2 bg-blue-50 text-blue-500">
             <p>Tech Stack</p>
           </div>
         </div>
@@ -204,7 +167,7 @@ export default function Hero() {
                   src={stack.icon}
                   alt={stack.name}
                   fill
-                  className="w-full h-full object-cover grayscale"
+                  className="w-full h-full object-cover"
                   sizes="(max-width: 768px) 60px, 90px"
                   loading="lazy"
                 />
@@ -226,9 +189,8 @@ export default function Hero() {
 
       {/* Writings */}
       <div className="pt-14 px-4 md:px-0 font-medium">
-        <div className="w-full flex items-center justify-start gap-3   text-black/50">
-          <div className="font-medium text-black/50 border rounded-full px-3 py-1 text-sm flex items-center gap-2">
-            <div className="bg-black/50 h-1 aspect-square rounded-full"></div>
+        <div className="w-full flex items-center justify-start gap-3">
+          <div className="font-medium  rounded-full px-3 py-1 text-sm flex items-center gap-2 bg-blue-50 text-blue-500">
             <p>Latest Article</p>
           </div>
         </div>

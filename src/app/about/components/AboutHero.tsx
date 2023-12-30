@@ -19,14 +19,14 @@ export default function AboutHero() {
 
       {/* At a glance */}
       <div className="flex flex-col gap-4 pt-12 font-medium px-4 md:px-0 items-start">
-        <p className="font-medium text-black/50 border rounded-full px-3 py-1 text-sm">
-          At a glance
-        </p>
-        <p>
+        <div className="font-medium  rounded-full px-3 py-1 text-sm flex items-center gap-2 bg-blue-50 text-blue-500">
+          <p>At a glance</p>
+        </div>
+        <p className="text-neutral-500">
           Hi there! I&apos;m a frontend engineer building{" "}
           <a
             href="https://unbound-studio.vercel.app/"
-            className="text-black/50 inline-block"
+            className="text-black inline-block"
           >
             @unboundvisual
           </a>{" "}
@@ -36,11 +36,11 @@ export default function AboutHero() {
 
       {/* Brief */}
       <div className="flex flex-col gap-4 pt-12 font-medium px-4 md:px-0 items-start">
-        <p className="font-medium text-black/50 border rounded-full px-3 py-1 text-sm">
-          Brief
-        </p>
-        <p>
-          1+ years of experience in web app development with a focus on creating
+        <div className="font-medium  rounded-full px-3 py-1 text-sm flex items-center gap-2 bg-blue-50 text-blue-500">
+          <p>Brief</p>
+        </div>
+        <p className="text-neutral-500">
+          2+ years of experience in web app development with a focus on creating
           visually appealing and user-friendly websites for clients in various
           industries. Strong project management skills, ability to effectively
           communicate with cross-functional teams, and a keen eye for detail.
@@ -49,9 +49,9 @@ export default function AboutHero() {
 
       {/* Experience */}
       <div className="w-full flex flex-col gap-4 pt-12 font-medium px-4 md:px-0 items-start">
-        <p className="font-medium text-black/50 border rounded-full px-3 py-1 text-sm">
-          Experience
-        </p>
+        <div className="font-medium  rounded-full px-3 py-1 text-sm flex items-center gap-2 bg-blue-50 text-blue-500">
+          <p>Experience</p>
+        </div>
         <div className="flex flex-col items-start gap-10 w-full">
           {experiences.map((experience, idx) => (
             <div
@@ -77,10 +77,10 @@ export default function AboutHero() {
 
       {/* Education */}
       <div className="flex flex-col gap-4 pt-12 font-medium px-4 md:px-0 items-start">
-        <p className="font-medium text-black/50 border rounded-full px-3 py-1 text-sm">
-          Education
-        </p>
-        <div className="flex flex-col items-start gap-10">
+        <div className="font-medium  rounded-full px-3 py-1 text-sm flex items-center gap-2 bg-blue-50 text-blue-500">
+          <p>Education</p>
+        </div>
+        <div className="flex flex-col items-start gap-10 w-full">
           <div className="flex items-baseline gap-4 md:gap-6 w-full">
             <div className="flex flex-col items-start gap-2 text-black w-full">
               <div className="w-full flex flex-col md:flex-row gap-2 items-start md:items-center justify-between">
@@ -100,9 +100,9 @@ export default function AboutHero() {
 
       {/* Skills */}
       <div className="flex flex-col gap-5 pt-10 px-4 md:px-0 items-start">
-        <p className="font-medium text-black/50 border rounded-full px-3 py-1 text-sm">
-          Skills
-        </p>
+        <div className="font-medium  rounded-full px-3 py-1 text-sm flex items-center gap-2 bg-blue-50 text-blue-500">
+          <p>Skills</p>
+        </div>
         <div className="flex gap-2 flex-wrap">
           {skills.map((skill) => (
             <a
