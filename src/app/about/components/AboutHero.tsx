@@ -6,22 +6,22 @@ export default function AboutHero() {
   return (
     <div className="w-full flex flex-col pb-12">
       {/* Title */}
-      <div className="py-2 flex items-center font-medium justify-between px-4 md:px-0 text-sm whitespace-nowrap">
-        <SpotifyStats />
-        <p>(づ ◕‿◕ )づ</p>
-      </div>
+      <div className="relative py-4 bg-black flex items-end font-medium justify-between px-4 h-32 text-sm whitespace-nowrap"></div>
 
       {/* Bio */}
-      <div className="flex flex-col pt-10 px-4 md:px-0">
+      <div className="flex flex-col items-start md:flex-row md:items-center gap-3 justify-between pt-10 px-4 md:px-0 w-full">
         <div className="flex flex-col items-start font-medium">
           <h2 className="text-lg">Tengku Farhan</h2>
           <p className="text-black/50">@kebabhan</p>
         </div>
+        <SpotifyStats />
       </div>
 
       {/* At a glance */}
-      <div className="flex flex-col gap-4 pt-12 font-medium px-4 md:px-0">
-        <p className="text-black/50">At a glance</p>
+      <div className="flex flex-col gap-4 pt-12 font-medium px-4 md:px-0 items-start">
+        <p className="font-medium text-black/50 border rounded-full px-3 py-1 text-sm">
+          At a glance
+        </p>
         <p>
           Hi there! I&apos;m a frontend engineer building{" "}
           <a
@@ -35,8 +35,10 @@ export default function AboutHero() {
       </div>
 
       {/* Brief */}
-      <div className="flex flex-col gap-4 pt-12 font-medium px-4 md:px-0">
-        <p className="font-medium text-black/50">Brief</p>
+      <div className="flex flex-col gap-4 pt-12 font-medium px-4 md:px-0 items-start">
+        <p className="font-medium text-black/50 border rounded-full px-3 py-1 text-sm">
+          Brief
+        </p>
         <p>
           1+ years of experience in web app development with a focus on creating
           visually appealing and user-friendly websites for clients in various
@@ -46,8 +48,10 @@ export default function AboutHero() {
       </div>
 
       {/* Experience */}
-      <div className="w-full flex flex-col gap-4 pt-12 font-medium px-4 md:px-0">
-        <p className="font-medium text-black/50">Experience</p>
+      <div className="w-full flex flex-col gap-4 pt-12 font-medium px-4 md:px-0 items-start">
+        <p className="font-medium text-black/50 border rounded-full px-3 py-1 text-sm">
+          Experience
+        </p>
         <div className="flex flex-col items-start gap-10 w-full">
           {experiences.map((experience, idx) => (
             <div
@@ -72,8 +76,10 @@ export default function AboutHero() {
       </div>
 
       {/* Education */}
-      <div className="flex flex-col gap-4 pt-12 font-medium px-4 md:px-0">
-        <p className="font-medium text-black/50">Education</p>
+      <div className="flex flex-col gap-4 pt-12 font-medium px-4 md:px-0 items-start">
+        <p className="font-medium text-black/50 border rounded-full px-3 py-1 text-sm">
+          Education
+        </p>
         <div className="flex flex-col items-start gap-10">
           <div className="flex items-baseline gap-4 md:gap-6 w-full">
             <div className="flex flex-col items-start gap-2 text-black w-full">
@@ -93,15 +99,17 @@ export default function AboutHero() {
       </div>
 
       {/* Skills */}
-      <div className="flex flex-col gap-5 pt-10 px-4 md:px-0">
-        <p className="font-medium text-black/50">Skills</p>
+      <div className="flex flex-col gap-5 pt-10 px-4 md:px-0 items-start">
+        <p className="font-medium text-black/50 border rounded-full px-3 py-1 text-sm">
+          Skills
+        </p>
         <div className="flex gap-2 flex-wrap">
           {skills.map((skill) => (
             <a
               key={skill.link}
               href={skill.link}
               target="_blank"
-              className="flex items-center gap-2 px-2 border border-black py-0.5 text-sm rounded-full"
+              className="flex items-center gap-2 px-2.5 border text-neutral-500 hover:bg-neutral-100 py-0.5 text-sm rounded-full"
             >
               {skill.name}
             </a>

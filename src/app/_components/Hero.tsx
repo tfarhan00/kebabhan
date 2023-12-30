@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <div className="w-full flex flex-col pb-12">
+    <div className="w-full flex flex-col pb-12 pt-4">
       {/* Title */}
       <div className="py-2 flex items-center font-medium justify-between px-4 md:px-0 text-sm whitespace-nowrap">
         <div className="flex items-center gap-3">
@@ -16,12 +16,15 @@ export default function Hero() {
             </p>
           </div>
         </div>
-        <a
-          href="mailto:farhanalryan2@gmail.com"
-          className="text-xs font-normal flex items-center gap-1 hover:underline bg-green-400 rounded-full text-white px-3 py-1"
-        >
-          <p>available for work</p>
-        </a>
+        <div className="flex items-center gap-2">
+          <div className="bg-green-400 w-2 aspect-square rounded-full"></div>
+          <a
+            href="mailto:farhanalryan2@gmail.com"
+            className="text-xs font-normal flex items-center gap-1 hover:underline text-black/50"
+          >
+            <p>available for work</p>
+          </a>
+        </div>
       </div>
       {/* Desc */}
       <div className="pt-10 px-4 md:px-0">
@@ -84,7 +87,7 @@ export default function Hero() {
       <div className="pt-6 px-4 md:px-0 flex items-start">
         <a
           href="mailto:farhanalryan2@gmail.com"
-          className="bg-white border border-black text-black px-4 rounded-full py-1.5 font-medium text-sm flex items-center gap-2"
+          className="bg-white border hover:bg-neutral-100 text-black px-4 rounded-full py-1.5 font-medium text-sm flex items-center gap-2"
         >
           Discuss a project
           <svg
@@ -108,13 +111,17 @@ export default function Hero() {
       {/* Works */}
       <div className="mt-12 px-4 md:px-0 font-medium">
         <div className="w-full flex items-center justify-start gap-3 text-black/50">
-        <div className="bg-black/50 h-2 aspect-square rounded-full">
+          <div className="font-medium text-black/50 border rounded-full px-3 py-1 text-sm flex items-center gap-2">
+            <div className="bg-black/50 h-1 aspect-square rounded-full"></div>
+            <p>Recent Work</p>
           </div>
-          <p>Recent Works</p>
         </div>
         <div className="flex flex-col pt-6 md:pt-8 gap-5">
           {works.map((work) => (
-            <div key={work.title} className="flex flex-col items-center gap-4">
+            <div
+              key={work.title}
+              className="flex flex-col items-center gap-4 border p-4"
+            >
               <a
                 className="overflow-hidden w-full h-[300px] md:h-[400px] relative"
                 target="_blank"
@@ -139,8 +146,9 @@ export default function Hero() {
                       src={work.showcase_img.src}
                       alt={work.title}
                       fill
-                      sizes="(max-width:768px) 600px, 1512px"
+                      sizes="(max-width:768px) 600px, 800px"
                       className="w-full h-full object-cover"
+                      priority={true}
                     />
                   </div>
                 ) : null}
@@ -182,9 +190,10 @@ export default function Hero() {
       {/* Stacks */}
       <div className="pt-14 px-4 md:px-0 font-medium">
         <div className="w-full flex items-center justify-start gap-3 text-black/50">
-        <div className="bg-black/50 h-2 aspect-square rounded-full">
+          <div className="font-medium text-black/50 border rounded-full px-3 py-1 text-sm flex items-center gap-2">
+            <div className="bg-black/50 h-1 aspect-square rounded-full"></div>
+            <p>Tech Stack</p>
           </div>
-          <p>Tech Stacks</p>
         </div>
 
         <div className="flex flex-col gap-8 pt-6 md:pt-8 ">
@@ -218,9 +227,10 @@ export default function Hero() {
       {/* Writings */}
       <div className="pt-14 px-4 md:px-0 font-medium">
         <div className="w-full flex items-center justify-start gap-3   text-black/50">
-          <div className="bg-black/50 h-2 aspect-square rounded-full">
+          <div className="font-medium text-black/50 border rounded-full px-3 py-1 text-sm flex items-center gap-2">
+            <div className="bg-black/50 h-1 aspect-square rounded-full"></div>
+            <p>Latest Article</p>
           </div>
-          <p>Latest Article</p>
         </div>
 
         <div className="flex flex-col pt-6 md:pt-8 ">
