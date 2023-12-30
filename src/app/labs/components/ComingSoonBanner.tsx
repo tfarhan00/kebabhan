@@ -11,7 +11,7 @@ export default function ComingSoonBanner() {
       <Rive
         src="https://cdn.rive.app/animations/vehicles.riv"
         stateMachines="bumpy"
-        className="w-full md:aspect-video max-w-xl"
+        className="w-full aspect-video max-w-xl"
       />
     </div>
   );
