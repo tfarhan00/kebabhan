@@ -10,23 +10,15 @@ export default function Footer() {
         >
           github
         </a>
-        <span>/</span>
+        <span>-</span>
         <a
           href="https://www.instagram.com/kebabhan_/"
           target="_blank"
           className="hover:underline"
         >
-          insta
+          instagram
         </a>
-        <span>/</span>
-        <a
-          href="https://twitter.com/kebabhandev"
-          target="_blank"
-          className="hover:underline"
-        >
-          x
-        </a>
-        <span>/</span>
+        <span>-</span>
         <a
           href="https://www.linkedin.com/in/tengkufarhan/"
           target="_blank"
