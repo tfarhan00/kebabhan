@@ -10,7 +10,7 @@ import MainWidthContainer from "./_components/MainWidthContainer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Kebabhan - Interactive Front-End Developer",
+  title: "Kebabhan - Front-End Developer",
   description:
     "Hi I'm Farhan, a frontend developer who loves to work on high standard apps",
   keywords: [

@@ -8,9 +8,9 @@ export default async function SpotifyStats() {
     <a
       href={song.songUrl}
       target="_blank"
-      className="flex items-center bg-white gap-3 border px-2 py-1 rounded-full text-xs hover:bg-black hover:text-white hover:border-transparent group"
+      className="flex items-center bg-white gap-3 border pl-1.5 pr-2 py-1 rounded-full text-xs hover:bg-black hover:text-white hover:border-transparent group"
     >
-      <div className="h-5 aspect-square rounded-full overflow-hidden relative">
+      <div className="h-6 aspect-square rounded-full overflow-hidden relative">
         <Image
           src={song.coverUrl}
           alt={song.title}

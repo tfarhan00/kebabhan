@@ -18,7 +18,7 @@ export default function AboutHero() {
       </div>
 
       {/* At a glance */}
-      <div className="flex flex-col gap-4 pt-12 font-medium px-4 md:px-0 items-start">
+      <div className="flex flex-col gap-6 pt-16 px-4 md:px-0 items-start">
         <div className="font-medium  rounded-full px-3 py-1 text-sm flex items-center gap-2 bg-blue-50 text-blue-500">
           <p>At a glance</p>
         </div>
@@ -35,8 +35,8 @@ export default function AboutHero() {
       </div>
 
       {/* Brief */}
-      <div className="flex flex-col gap-4 pt-12 font-medium px-4 md:px-0 items-start">
-        <div className="font-medium  rounded-full px-3 py-1 text-sm flex items-center gap-2 bg-blue-50 text-blue-500">
+      <div className="flex flex-col gap-6 pt-16 px-4 md:px-0 items-start">
+        <div className="font-medium rounded-full px-3 py-1 text-sm flex items-center gap-2 bg-blue-50 text-blue-500">
           <p>Brief</p>
         </div>
         <p className="text-neutral-500">
@@ -48,7 +48,7 @@ export default function AboutHero() {
       </div>
 
       {/* Experience */}
-      <div className="w-full flex flex-col gap-4 pt-12 font-medium px-4 md:px-0 items-start">
+      <div className="w-full flex flex-col gap-6 pt-16 font-medium px-4 md:px-0 items-start">
         <div className="font-medium  rounded-full px-3 py-1 text-sm flex items-center gap-2 bg-blue-50 text-blue-500">
           <p>Experience</p>
         </div>
@@ -76,7 +76,7 @@ export default function AboutHero() {
       </div>
 
       {/* Education */}
-      <div className="flex flex-col gap-4 pt-12 font-medium px-4 md:px-0 items-start">
+      <div className="flex flex-col gap-6 pt-16 font-medium px-4 md:px-0 items-start">
         <div className="font-medium  rounded-full px-3 py-1 text-sm flex items-center gap-2 bg-blue-50 text-blue-500">
           <p>Education</p>
         </div>
@@ -99,7 +99,7 @@ export default function AboutHero() {
       </div>
 
       {/* Skills */}
-      <div className="flex flex-col gap-5 pt-10 px-4 md:px-0 items-start">
+      <div className="flex flex-col gap-6 pt-16 px-4 md:px-0 items-start">
         <div className="font-medium  rounded-full px-3 py-1 text-sm flex items-center gap-2 bg-blue-50 text-blue-500">
           <p>Skills</p>
         </div>

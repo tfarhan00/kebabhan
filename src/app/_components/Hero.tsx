@@ -146,7 +146,7 @@ export default function Hero() {
       </div>
 
       {/* Stacks */}
-      <div className="pt-14 px-4 md:px-0 font-medium">
+      <div className="pt-16 px-4 md:px-0 font-medium">
         <div className="w-full flex items-center justify-start gap-3">
           <div className="font-medium  rounded-full px-3 py-1 text-sm flex items-center gap-2 bg-blue-50 text-blue-500">
             <p>Tech Stack</p>
@@ -182,7 +182,7 @@ export default function Hero() {
       </div>
 
       {/* Writings */}
-      <div className="pt-14 px-4 md:px-0 font-medium">
+      <div className="pt-16 px-4 md:px-0 font-medium">
         <div className="w-full flex items-center justify-start gap-3">
           <div className="font-medium  rounded-full px-3 py-1 text-sm flex items-center gap-2 bg-blue-50 text-blue-500">
             <p>Latest Article</p>
