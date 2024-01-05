@@ -12,7 +12,7 @@ export default function LabPage() {
       <div className="w-full max-w-xl pb-20 pt-6 flex flex-col gap-6">
         <div className="w-full flex items-center justify-start gap-3">
           <div className="font-medium rounded-full px-3 py-1 flex items-center gap-2 bg-blue-50 text-blue-500">
-            <p>Experiments</p>
+            <p>Lab</p>
           </div>
         </div>
         <div className="flex flex-col gap-6">
