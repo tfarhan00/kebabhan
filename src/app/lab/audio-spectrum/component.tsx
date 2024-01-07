@@ -272,6 +272,7 @@ function AudioPill(props: {
         cancelAnimationFrame(audioRaf);
       });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

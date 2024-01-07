@@ -69,3 +69,18 @@ export const getSpotifySong = async () => {
 };
 
 export type SpotifyResult = ReturnType<typeof getSpotifySong>;
+
+async function handler() {
+  const result = await SpotifyApi.showNowPlaying();
+  if (result == null) return null;
+  const wholeSong = {
+    artist: result.items[0].track.artists[0].name,
+    title: result.items[0].track.name,
+    coverUrl: result.items[0].track.album.images[1].url,
+    songUrl: result.items[0].track.external_urls.spotify,
+    previewUrl: result.items[0].track.preview_url,
+  };
+  return Response.json(wholeSong);
+}
+
+export { handler as GET };
