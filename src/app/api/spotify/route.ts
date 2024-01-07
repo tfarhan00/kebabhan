@@ -1,3 +1,5 @@
+export const runtime = "edge";
+
 const NOW_PLAYING_ENDPOINT = `https://api.spotify.com/v1/me/player/recently-played`;
 const AUTH_ENDPOINT = `https://accounts.spotify.com/api/token`;
 const CLIENT_ID = process.env.SPOTIFY_CLIENT_ID!;
