@@ -13,7 +13,7 @@ export default function WorksContent() {
         {works.map((work) => (
           <div
             key={work.title}
-            className="flex flex-col items-center gap-4 border p-4"
+            className="flex flex-col items-center gap-4 border p-5 rounded-xl"
           >
             <a
               className="overflow-hidden w-full h-[300px] md:h-[400px] relative"

@@ -78,7 +78,7 @@ export default function Hero() {
           {works.map((work) => (
             <div
               key={work.title}
-              className="flex flex-col items-center gap-4 border p-4"
+              className="flex flex-col items-center gap-4 border p-5 rounded-xl"
             >
               <a
                 className="overflow-hidden w-full h-[300px] md:h-[400px] relative"
@@ -93,7 +93,7 @@ export default function Hero() {
                     playsInline
                     width="1918"
                     height="954"
-                    className="object-cover w-full h-full"
+                    className="object-contain w-full h-full"
                     poster={work.showcase_img.fallback}
                   >
                     <source src={work.showcase_img.src} type="video/webm" />

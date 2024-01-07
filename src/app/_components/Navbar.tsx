@@ -38,7 +38,7 @@ export default function Navbar() {
 
   return (
     <div className="fixed w-full left-0 bottom-0 py-4 flex items-center justify-center z-[99] pointer-events-none bg-transparent text-sm">
-      <div className="relative overflow-hidden flex items-center gap-3 px-4 py-2 rounded-md border border-black/10 bg-neutral-100 text-black pointer-events-auto">
+      <div className="relative overflow-hidden flex items-center gap-3 px-4 py-3 rounded-md border border-black/10 bg-neutral-100 text-black pointer-events-auto">
         <div
           style={{
             transform: underlineSlide(`/${pathname.split("/")[1]}`),

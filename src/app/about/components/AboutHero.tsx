@@ -6,7 +6,7 @@ export default function AboutHero() {
   return (
     <div className="w-full flex flex-col pb-12 font-medium">
       {/* Title */}
-      <div className="relative py-4 bg-black flex items-end font-medium justify-between px-4 h-32 text-sm whitespace-nowrap"></div>
+      <div className="relative py-4 bg-black flex items-end rounded-b-xl font-medium justify-between px-4 h-32 text-sm whitespace-nowrap"></div>
 
       {/* Bio */}
       <div className="flex flex-col items-start md:flex-row md:items-center gap-3 justify-between pt-10 px-4 md:px-0 w-full">
