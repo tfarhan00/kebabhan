@@ -1,12 +1,6 @@
 "use client";
 
-import {
-  MutableRefObject,
-  RefObject,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import { RefObject, useCallback, useEffect, useRef, useState } from "react";
 import LabItemContainer from "../components/LabItemContainer";
 import { twMerge } from "tailwind-merge";
 import gsap from "gsap";
@@ -19,6 +13,9 @@ export default function AudioSpectrum() {
   const [showStatus, setStatus] = useState(false);
   const audioRef = useRef<HTMLMediaElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const audioRaf = useRef<number>(0);
+  const audioSrcRef = useRef<MediaElementAudioSourceNode>();
+  const audioAnalyzer = useRef<AnalyserNode>();
 
   useEffect(() => {
     let interval: any;
@@ -39,7 +36,6 @@ export default function AudioSpectrum() {
 
   useEffect(() => {
     const audioEl = audioRef.current;
-    const container = containerRef.current;
 
     if (!audioEl) return;
 
@@ -51,10 +47,18 @@ export default function AudioSpectrum() {
       audioEl.pause();
       setIsRunning(false);
     }
+  }, [isPlay, isRunning]);
+
+  useEffect(() => {
+    const audioEl = audioRef.current;
+    const container = containerRef.current;
+
+    if (!audioEl) return;
 
     function onAudioEnd() {
       setPlay(false);
       setIsRunning(false);
+      stopAnim();
     }
 
     const circle = document.querySelector("#circle-anim");
@@ -76,8 +80,130 @@ export default function AudioSpectrum() {
       audioEl.pause();
       audioEl.removeEventListener("ended", onAudioEnd);
       audioEl.removeEventListener("timeupdate", onTimeUpdate);
+      cancelAnimationFrame(audioRaf.current);
     };
-  }, [isPlay, isRunning]);
+  }, []);
+
+  // Audio visual
+  function playAnim() {
+    if (!audioRef.current) return;
+    let audioCtx = new AudioContext();
+    if (!audioSrcRef.current) {
+      audioSrcRef.current = audioCtx.createMediaElementSource(audioRef.current);
+      audioAnalyzer.current = audioCtx.createAnalyser();
+      audioSrcRef.current.connect(audioAnalyzer.current);
+      audioAnalyzer.current.connect(audioCtx.destination);
+      audioAnalyzer.current.fftSize = 256;
+    }
+    visualizer();
+  }
+
+  function visualizer() {
+    const audioBars = Array.from(
+      document.querySelectorAll<HTMLElement>("#audio-bar")
+    );
+    const audioCon = document.querySelector<HTMLElement>("#audio-container");
+    const analyzer = audioAnalyzer.current;
+
+    if (analyzer) {
+      const barsLength = audioBars.length;
+      const bufferLength = analyzer.frequencyBinCount;
+      const freqData = new Uint8Array(analyzer.frequencyBinCount);
+      const maxHeight = (audioCon?.clientHeight ?? 0) - 32;
+      const centerIdx = Math.floor(barsLength / 2);
+      const groupSize = Math.floor(bufferLength / 1.5 / barsLength);
+      const leftGroup = audioBars.slice(0, Math.round(barsLength / 2));
+      const rightGroup = audioBars.slice(
+        Math.round(barsLength / 2),
+        barsLength
+      );
+
+      // Looping animation
+      function updateFrequencyData() {
+        if (analyzer) {
+          analyzer.getByteFrequencyData(freqData);
+          leftGroup.forEach((bar, idx) => {
+            const revIdx = Math.round(barsLength / 2) - idx;
+            const start = revIdx * groupSize;
+            const end = (revIdx + 1) * groupSize;
+            const groupSum = freqData
+              .slice(start, end)
+              .reduce((acc, value) => acc + value, 0);
+
+            const scale = 1;
+
+            const normalizedHeight =
+              (groupSum / (groupSize * 255)) * maxHeight * scale;
+
+            const minHeight = 12;
+            const clampedHeight = Math.max(minHeight, normalizedHeight);
+
+            bar.style.height = `${clampedHeight}px`;
+
+            const minOpacity = 0;
+            const maxOpacity = 1.0;
+            const opacity =
+              minOpacity + (maxOpacity - minOpacity) * (freqData[start] / 255);
+            bar.style.opacity = opacity.toFixed(2);
+          });
+
+          rightGroup.forEach((bar, idx) => {
+            const start = idx * groupSize;
+            const end = (idx + 1) * groupSize;
+            const groupSum = freqData
+              .slice(start, end)
+              .reduce((acc, value) => acc + value, 0);
+
+            const scale = 1;
+
+            const normalizedHeight =
+              (groupSum / (groupSize * 255)) * maxHeight * scale;
+
+            const minHeight = 12;
+            const clampedHeight = Math.max(minHeight, normalizedHeight);
+
+            bar.style.height = `${clampedHeight}px`;
+
+            const minOpacity = 0;
+            const maxOpacity = 1.0;
+            const opacity =
+              minOpacity + (maxOpacity - minOpacity) * (freqData[start] / 255);
+            bar.style.opacity = opacity.toFixed(2);
+          });
+        }
+      }
+
+      function animationLoop() {
+        updateFrequencyData();
+        audioRaf.current = requestAnimationFrame(animationLoop);
+      }
+
+      function startAnimation() {
+        animationLoop();
+      }
+
+      startAnimation();
+    }
+  }
+
+  function stopAnim() {
+    const audioBars = document.querySelectorAll<HTMLElement>("#audio-bar");
+    gsap.to(audioBars, {
+      height: 12,
+      opacity: 1,
+    });
+    cancelAnimationFrame(audioRaf.current);
+    audioRaf.current = 0;
+  }
+
+  const toggleAudio = () => {
+    setPlay((prev) => !prev);
+    if (!audioRaf.current) {
+      playAnim();
+    } else {
+      stopAnim();
+    }
+  };
 
   return (
     <LabItemContainer>
@@ -125,13 +251,23 @@ export default function AudioSpectrum() {
         </audio>
 
         {/* MainVisual */}
-        <AudioPill isPlaying={isPlay} audioRef={audioRef} />
+        <div
+          id="audio-container"
+          className="bg-white rounded-full px-4 py-2 flex items-center justify-center gap-1 h-20 shadow-lg w-64 relative overflow-hidden"
+        >
+          {[...Array(36).keys()].map((item) => (
+            <div
+              id="audio-bar"
+              key={item}
+              style={{}}
+              className="w-[0.1rem] h-3 bg-gradient-to-b from-blue-500 to-blue-400 rounded-full"
+            ></div>
+          ))}
+        </div>
 
         {/* Play button */}
         <button
-          onClick={() => {
-            setPlay((prev) => !prev);
-          }}
+          onClick={toggleAudio}
           className="bg-white w-10 border aspect-square rounded-full absolute bottom-5 right-5 outline-none"
         >
           <div className="relative w-full h-full flex items-center justify-center">
@@ -195,101 +331,5 @@ function AudioPill(props: {
   isPlaying: boolean;
   audioRef: RefObject<HTMLAudioElement>;
 }) {
-  const isPlaying = props.isPlaying;
-  const audioCtx = useRef<AudioContext | null>(null);
-
-  useEffect(() => {
-    let audioRaf: number = 0;
-    const audioEl = props.audioRef.current;
-    const audioBars = document.querySelectorAll<HTMLElement>("#audio-bar");
-    const audioCon = document.querySelector<HTMLElement>("#audio-container");
-
-    if (!audioEl) return;
-
-    if (!audioCtx.current) {
-      audioCtx.current = new AudioContext();
-    } else {
-      let _audioCtx = audioCtx.current;
-      const analyzer = _audioCtx.createAnalyser();
-      const audioSrc = _audioCtx.createMediaElementSource(audioEl);
-      audioSrc.connect(analyzer);
-      analyzer.connect(_audioCtx.destination);
-      analyzer.fftSize = 256;
-
-      const bufferLength = analyzer.frequencyBinCount;
-      const freqData = new Uint8Array(analyzer.frequencyBinCount);
-      const maxHeight = (audioCon?.clientHeight ?? 0) - 32;
-      const centerIdx = Math.floor(audioBars.length / 2);
-      const groupSize = Math.floor(bufferLength / 1.5 / audioBars.length);
-
-      // Looping animation
-      function updateFrequencyData() {
-        analyzer.getByteFrequencyData(freqData);
-        audioBars.forEach((bar, idx) => {
-          const start = idx * groupSize;
-          const end = (idx + 1) * groupSize;
-          const groupSum = freqData
-            .slice(start, end)
-            .reduce((acc, value) => acc + value, 0);
-
-          const scale = idx === centerIdx ? 1.5 : 1;
-
-          const normalizedHeight =
-            (groupSum / (groupSize * 255)) * maxHeight * scale;
-
-          const minHeight = 12;
-          const clampedHeight = Math.max(minHeight, normalizedHeight);
-
-          bar.style.height = `${clampedHeight}px`;
-
-          const minOpacity = 0;
-          const maxOpacity = 1.0;
-          const opacity =
-            minOpacity + (maxOpacity - minOpacity) * (freqData[start] / 255);
-          bar.style.opacity = opacity.toFixed(2);
-        });
-      }
-
-      function animationLoop() {
-        updateFrequencyData();
-        audioRaf = requestAnimationFrame(animationLoop);
-      }
-
-      function resetBars() {
-        audioBars.forEach((bar) => {
-          gsap.to(bar, {
-            height: 12,
-          });
-        });
-      }
-
-      audioEl.addEventListener("play", () => {
-        animationLoop();
-      });
-
-      audioEl.addEventListener("pause", () => {
-        resetBars();
-        cancelAnimationFrame(audioRaf);
-      });
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  return (
-    <>
-      <div
-        id="audio-container"
-        className="bg-white rounded-full px-4 py-2 flex items-center justify-center gap-1 h-20 shadow-lg w-60"
-      >
-        {[...Array(27).keys()].map((item) => (
-          <div
-            id="audio-bar"
-            key={item}
-            style={{}}
-            className="w-[0.15rem] h-3 bg-gradient-to-b from-blue-500 to-blue-400 rounded-full"
-          ></div>
-        ))}
-      </div>
-    </>
-  );
+  return <></>;
 }
