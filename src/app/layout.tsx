@@ -78,7 +78,7 @@ export default function RootLayout({
   gtag('config', 'G-0WR3LJ2YHC');`}
         </Script>
       </head>
-      <body className={inter.className}>
+      <body suppressHydrationWarning className={inter.className}>
         <JotaiProvider>
           <main className="w-full flex flex-col items-center">
             <Navbar />

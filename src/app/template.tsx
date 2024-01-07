@@ -1,7 +1,3 @@
-"use client";
-
-import { animatePageIn } from "@/animations/page-transition";
-
 import { PropsWithChildren } from "react";
 
 function translateRoutePath(routePath: string) {
@@ -14,10 +10,7 @@ function translateRoutePath(routePath: string) {
       return "Labs";
   }
 }
+// In case if I want to make page transition in the future
 export default function Template({ children }: PropsWithChildren) {
-  // useEffect(() => {
-  //   animatePageIn();
-  // }, []);
-
   return children;
 }

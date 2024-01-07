@@ -21,7 +21,7 @@ export default function LabPage() {
               key={item.name}
               className="flex flex-col gap-4 items-start relative"
             >
-              {item.component}
+              {<item.component />}
               {item.path === null ? null : (
                 <Link
                   href={`/lab/${item.path}`}

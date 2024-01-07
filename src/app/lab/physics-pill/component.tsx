@@ -49,7 +49,6 @@ export default function PhysicsPillComponent() {
     const cw = mainScene.clientWidth;
     const ch = mainScene.clientHeight;
 
-    console.log(ch);
     const VIEWPORT = {
       centerX: cw / 2,
       centerY: ch / 2,

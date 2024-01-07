@@ -2,16 +2,6 @@ import { MetadataRoute } from "next";
 import { labItems } from "./lab/items";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const _labItems = labItems.map((item) => {
-    const name = item.path;
-    if (name === null) return null;
-    return {
-      url: `https://kebabhan.vercel.app/${item.path}`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 1,
-    };
-  });
   return [
     {
       url: "https://kebabhan.vercel.app",
