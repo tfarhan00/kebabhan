@@ -70,7 +70,7 @@ export const getSpotifySong = async () => {
 
 export type SpotifyResult = ReturnType<typeof getSpotifySong>;
 
-async function handler() {
+export default async function GET() {
   const result = await SpotifyApi.showNowPlaying();
   if (result == null) return null;
   const wholeSong = {
@@ -82,5 +82,3 @@ async function handler() {
   };
   return Response.json(wholeSong);
 }
-
-export { handler as GET };
