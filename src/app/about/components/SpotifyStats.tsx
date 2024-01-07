@@ -1,4 +1,4 @@
-import { getSpotifySong } from "@/app/api/spotify/route";
+import { getSpotifySong } from "@/server/api/spotify";
 import Image from "next/image";
 
 export default async function SpotifyStats() {
