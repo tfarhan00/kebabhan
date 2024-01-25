@@ -1,5 +1,10 @@
 export const experiences = [
   {
+    title: "Fullstack Developer - Full Time",
+    company: "Engowl Studio",
+    date: "January 2024 - Present",
+  },
+  {
     title: "Fullstack Developer - Freelance",
     company: "Self Employed",
     date: "November 2023 - Present",
