@@ -5,7 +5,7 @@ export const experiences = [
     date: "November 2023 - Present",
   },
   {
-    title: "Frontend Developer - Full Time",
+    title: "Fullstack Developer - Full Time",
     company: "Netra",
     date: "March 2023 - September 2023",
   },
@@ -15,8 +15,8 @@ export const experiences = [
     date: "October 2022 - March 2023",
   },
   {
-    title: "Photographer & Graphic Designer",
-    company: "Freelancer",
+    title: "Web Developer - Freelance",
+    company: "Self Employed",
     date: "September 2021 - June 2022",
   },
 ];
