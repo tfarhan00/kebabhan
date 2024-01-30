@@ -47,4 +47,8 @@ export const skills = [
     name: "Framer",
     link: "https://www.framer.com/",
   },
+  {
+    name: "Python",
+    link: "https://www.python.org/",
+  },
 ];

@@ -3,7 +3,10 @@
 import MarqueeText from "@/app/_components/MarqueeText/MarqueeText";
 import { useEffect, useRef, useState } from "react";
 
-export default function SpotifyTitleMarquee(props: { title: string }) {
+export default function SpotifyTitleMarquee(props: {
+  title: string;
+  artist: string;
+}) {
   const [isOverflow, setOverflow] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
   const titleRef = useRef<HTMLParagraphElement>(null);
@@ -14,7 +17,7 @@ export default function SpotifyTitleMarquee(props: { title: string }) {
 
   useEffect(() => {
     const title = titleRef.current;
-    const MAX_WIDTH = 100; // allowed title width is 100px
+    const MAX_WIDTH = 115; // allowed title width is 100px
 
     function detectTitleOverflow() {
       if (!title || !isMounted) return;
@@ -37,23 +40,31 @@ export default function SpotifyTitleMarquee(props: { title: string }) {
   return (
     <>
       {/* Shadow text element to detect width of the title */}
-      <p
+      <div
         ref={titleRef}
-        className="absolute opacity-0 pointer-events-none"
+        className="absolute opacity-0 pointer-events-none flex items-center whitespace-nowrap"
         aria-hidden="true"
       >
-        {props.title}
-      </p>
+        <p>{props.title}</p>
+        <span>-</span>
+        <p>{props.artist}</p>
+      </div>
       <div
         style={{
           WebkitMaskImage: isOverflow
             ? `linear-gradient(90deg, transparent, #000 15%, #000 85%, transparent 100%)`
             : "",
         }}
-        className="flex overflow-hidden max-w-[100px] relative"
+        className="flex overflow-hidden max-w-[115px] relative"
       >
         <MarqueeText enabled={isOverflow}>
-          <p>{props.title}</p>
+          <div className="flex items-center gap-1 whitespace-nowrap">
+            <p>{props.title}</p>
+            <span>-</span>
+            <p className="text-black/40 dark:text-white/50 group-hover:text-black/50 dark:group-hover:text-white/50">
+              {props.artist}
+            </p>
+          </div>
         </MarqueeText>
       </div>
     </>

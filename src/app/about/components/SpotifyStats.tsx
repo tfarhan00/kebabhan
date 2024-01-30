@@ -9,7 +9,7 @@ export default async function SpotifyStats() {
     <a
       href={song.songUrl}
       target="_blank"
-      className="flex items-center bg-white gap-3 border pl-1.5 pr-2 py-1 rounded-full text-xs hover:bg-black/5 dark:bg-neutral-900 dark:border-white/10 hover:border-transparent group"
+      className="flex items-center bg-white gap-3 border pl-1.5 pr-2 py-1 rounded-full text-xs hover:bg-black/5 dark:hover:bg-white/5 dark:bg-neutral-900 dark:border-white/10 hover:border-transparent group"
     >
       <div className="h-6 aspect-square rounded-full overflow-hidden relative">
         <Image
@@ -21,11 +21,7 @@ export default async function SpotifyStats() {
         />
       </div>
       <div className="flex items-center gap-1">
-        <SpotifyTitleMarquee title={song.title} />
-        <span className="hidden md:inline">-</span>
-        <p className="text-black/40 dark:text-white/50 group-hover:text-black/50 dark:group-hover:text-white/50 hidden md:inline">
-          {song.artist}
-        </p>
+        <SpotifyTitleMarquee title={song.title} artist={song.artist} />
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="16"
