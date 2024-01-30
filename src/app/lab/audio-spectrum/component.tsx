@@ -112,11 +112,8 @@ export default function AudioSpectrum() {
       const maxHeight = (audioCon?.clientHeight ?? 0) - 32;
       const centerIdx = Math.floor(barsLength / 2);
       const groupSize = Math.floor(bufferLength / 1.5 / barsLength);
-      const leftGroup = audioBars.slice(0, Math.round(barsLength / 2));
-      const rightGroup = audioBars.slice(
-        Math.round(barsLength / 2),
-        barsLength
-      );
+      const leftGroup = audioBars.slice(0, Math.round(centerIdx));
+      const rightGroup = audioBars.slice(Math.round(centerIdx), barsLength);
 
       // Looping animation
       function updateFrequencyData() {
@@ -141,7 +138,7 @@ export default function AudioSpectrum() {
             bar.style.height = `${clampedHeight}px`;
 
             const minOpacity = 0;
-            const maxOpacity = 1.0;
+            const maxOpacity = 1;
             const opacity =
               minOpacity + (maxOpacity - minOpacity) * (freqData[start] / 255);
             bar.style.opacity = opacity.toFixed(2);
@@ -256,14 +253,14 @@ export default function AudioSpectrum() {
         {/* MainVisual */}
         <div
           id="audio-container"
-          className="bg-white dark:bg-white/5 rounded-full px-4 py-2 flex items-center justify-center gap-1 h-20 shadow-lg w-64 relative overflow-hidden"
+          className="bg-white dark:bg-white/5 rounded-full px-4 py-2 flex items-center justify-center gap-1 h-20 shadow-lg w-72 relative overflow-hidden"
         >
-          {[...Array(36).keys()].map((item) => (
+          {[...Array(45).keys()].map((item) => (
             <div
               id="audio-bar"
               key={item}
               style={{}}
-              className="w-[0.1rem] h-3 bg-gradient-to-b from-blue-500 to-blue-400 rounded-full"
+              className="w-[0.1rem] shrink-0 h-3 bg-gradient-to-b from-blue-500 to-blue-400 rounded-full"
             ></div>
           ))}
         </div>
