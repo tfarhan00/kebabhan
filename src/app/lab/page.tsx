@@ -11,7 +11,7 @@ export default function LabPage() {
     <div className="min-h-screen w-full flex flex-col items-center px-5">
       <div className="w-full max-w-xl pb-20 pt-6 flex flex-col gap-6">
         <div className="w-full flex items-center justify-start gap-3">
-          <div className="font-medium rounded-full px-3 py-1 flex items-center gap-2 bg-blue-50 text-blue-500 dark:text-blue-400 dark:bg-blue-400/10">
+          <div className="font-medium rounded-md px-3 py-1 flex items-center gap-2 bg-blue-50 text-blue-500 dark:text-blue-400 dark:bg-blue-400/10">
             <p>Lab</p>
           </div>
         </div>
@@ -44,7 +44,7 @@ export default function LabPage() {
                   </svg>
                 </Link>
               )}
-              <div className="absolute pointer-events-none bottom-4 left-4 bg-neutral-200 px-4 py-1.5 text-xs rounded-full text-neutral-600 dark:text-white/80 dark:bg-white/5">
+              <div className="absolute pointer-events-none bottom-4 left-4 bg-neutral-200 px-4 py-1.5 text-xs rounded text-neutral-600 dark:text-white/80 dark:bg-white/5">
                 {item.name}
               </div>
             </div>

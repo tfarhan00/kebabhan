@@ -5,12 +5,12 @@ export const experiences = [
     date: "January 2024 - Present",
   },
   {
-    title: "Fullstack Developer - Freelance",
+    title: "Web Developer - Freelance",
     company: "Self Employed",
     date: "November 2023 - Present",
   },
   {
-    title: "Fullstack Developer - Full Time",
+    title: "Frontend Developer - Full Time",
     company: "Netra",
     date: "March 2023 - September 2023",
   },

@@ -21,7 +21,7 @@ export default function AboutHero() {
 
       {/* At a glance */}
       <div className="flex flex-col gap-6 pt-16 px-4 md:px-0 items-start">
-        <div className="font-medium  rounded-full px-3 py-1 text-sm flex items-center gap-2 bg-blue-50 text-blue-500 dark:text-blue-400 dark:bg-blue-400/10">
+        <div className="font-medium  rounded-md px-3 py-1 text-sm flex items-center gap-2 bg-blue-50 text-blue-500 dark:text-blue-400 dark:bg-blue-400/10">
           <p>At a glance</p>
         </div>
         <p className="text-black/50 dark:text-white/50">
@@ -35,7 +35,7 @@ export default function AboutHero() {
 
       {/* Brief */}
       <div className="flex flex-col gap-6 pt-16 px-4 md:px-0 items-start">
-        <div className="font-medium rounded-full px-3 py-1 text-sm flex items-center gap-2 bg-blue-50 text-blue-500 dark:text-blue-400 dark:bg-blue-400/10">
+        <div className="font-medium rounded-md px-3 py-1 text-sm flex items-center gap-2 bg-blue-50 text-blue-500 dark:text-blue-400 dark:bg-blue-400/10">
           <p>Brief</p>
         </div>
         <p className="text-black/50 dark:text-white/50">
@@ -48,7 +48,7 @@ export default function AboutHero() {
 
       {/* Experience */}
       <div className="w-full flex flex-col gap-6 pt-16 px-4 md:px-0 items-start">
-        <div className="font-medium  rounded-full px-3 py-1 text-sm flex items-center gap-2 bg-blue-50 text-blue-500 dark:text-blue-400 dark:bg-blue-400/10">
+        <div className="font-medium  rounded-md px-3 py-1 text-sm flex items-center gap-2 bg-blue-50 text-blue-500 dark:text-blue-400 dark:bg-blue-400/10">
           <p>Experience</p>
         </div>
         <div className="flex flex-col items-start gap-10 w-full">
@@ -76,7 +76,7 @@ export default function AboutHero() {
 
       {/* Education */}
       <div className="flex flex-col gap-6 pt-16 px-4 md:px-0 items-start">
-        <div className="font-medium rounded-full px-3 py-1 text-sm flex items-center gap-2 bg-blue-50 text-blue-500 dark:text-blue-400 dark:bg-blue-400/10">
+        <div className="font-medium rounded-md px-3 py-1 text-sm flex items-center gap-2 bg-blue-50 text-blue-500 dark:text-blue-400 dark:bg-blue-400/10">
           <p>Education</p>
         </div>
         <div className="flex flex-col items-start gap-10 w-full">
@@ -101,7 +101,7 @@ export default function AboutHero() {
 
       {/* Skills */}
       <div className="flex flex-col gap-6 pt-16 px-4 md:px-0 items-start">
-        <div className="font-medium  rounded-full px-3 py-1 text-sm flex items-center gap-2 bg-blue-50 text-blue-500 dark:text-blue-400 dark:bg-blue-400/10">
+        <div className="font-medium  rounded-md px-3 py-1 text-sm flex items-center gap-2 bg-blue-50 text-blue-500 dark:text-blue-400 dark:bg-blue-400/10">
           <p>Skills</p>
         </div>
         <div className="flex gap-2 flex-wrap">
@@ -110,7 +110,7 @@ export default function AboutHero() {
               key={skill.link}
               href={skill.link}
               target="_blank"
-              className="flex items-center gap-2 px-2.5 border dark:border-white/10 text-black/50 dark:text-white/50 hover:bg-neutral-100 dark:hover:bg-white/5 py-0.5 text-sm rounded-full"
+              className="flex items-center gap-2 px-2.5 border dark:border-white/10 text-black/50 dark:text-white/50 hover:bg-neutral-100 dark:hover:bg-white/5 py-1 text-sm rounded-md"
             >
               {skill.name}
             </a>

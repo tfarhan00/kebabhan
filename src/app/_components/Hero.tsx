@@ -47,7 +47,7 @@ export default function Hero() {
         </div>
         <a
           href="mailto:kebabhandev@gmail.com"
-          className="bg-black/90 dark:bg-white/90 dark:text-black dark:hover:bg-neutral-100 hover:bg-neutral-700 text-white px-4 rounded-full py-1.5 font-medium text-xs md:text-sm flex items-center gap-2"
+          className="bg-black/90 dark:bg-white/90 dark:text-black dark:hover:bg-neutral-100 hover:bg-neutral-700 text-white px-4 rounded-md py-2 font-medium text-sm flex items-center gap-2"
         >
           Discuss a project
           <svg
@@ -71,7 +71,7 @@ export default function Hero() {
       {/* Works */}
       <div className="mt-20 px-4 md:px-0 font-medium">
         <div className="w-full flex items-center justify-start gap-3">
-          <div className="font-medium rounded-full px-3 py-1 text-sm flex items-center gap-2 bg-blue-50 text-blue-500 dark:text-blue-400 dark:bg-blue-400/10">
+          <div className="font-medium rounded-md px-3 py-1 text-sm flex items-center gap-2 bg-blue-50 text-blue-500 dark:text-blue-400 dark:bg-blue-400/10">
             <p>Recent Work</p>
           </div>
         </div>
@@ -149,7 +149,7 @@ export default function Hero() {
       {/* Stacks */}
       <div className="pt-16 px-4 md:px-0 font-medium">
         <div className="w-full flex items-center justify-start gap-3">
-          <div className="font-medium rounded-full px-3 py-1 text-sm flex items-center gap-2 bg-blue-50 text-blue-500 dark:text-blue-400 dark:bg-blue-400/10">
+          <div className="font-medium rounded-md px-3 py-1 text-sm flex items-center gap-2 bg-blue-50 text-blue-500 dark:text-blue-400 dark:bg-blue-400/10">
             <p>Tech Stack</p>
           </div>
         </div>
@@ -185,7 +185,7 @@ export default function Hero() {
       {/* Writings */}
       <div className="pt-16 px-4 md:px-0">
         <div className="w-full flex items-center justify-start gap-3">
-          <div className="font-medium rounded-full px-3 py-1 text-sm flex items-center gap-2 bg-blue-50 text-blue-500 dark:text-blue-400 dark:bg-blue-400/10">
+          <div className="font-medium rounded-md px-3 py-1 text-sm flex items-center gap-2 bg-blue-50 text-blue-500 dark:text-blue-400 dark:bg-blue-400/10">
             <p>Latest Article</p>
           </div>
         </div>

@@ -5,7 +5,7 @@ export default function WorksContent() {
   return (
     <div className="w-full pb-20 pt-6 flex flex-col px-4 md:px-0 text-black/90 dark:text-white/90">
       <div className="w-full flex items-center justify-start gap-3">
-        <div className="font-medium rounded-full px-3 py-1 flex items-center gap-2 bg-blue-50 text-blue-500 dark:text-blue-400 dark:bg-blue-400/10">
+        <div className="font-medium rounded-md px-3 py-1 flex items-center gap-2 bg-blue-50 text-blue-500 dark:text-blue-400 dark:bg-blue-400/10">
           <p>Works</p>
         </div>
       </div>
