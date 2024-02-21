@@ -32,8 +32,7 @@ export default function Hero() {
             Enterprise
           </span>
           . I&apos;m passionate about pushing the limits of software to craft
-          meaningful experiences for both my clients and their users. Take a
-          drink and happy exploring {":)"}
+          meaningful experiences for both my clients and their users. Cheers 🥂
         </p>
       </div>
 
