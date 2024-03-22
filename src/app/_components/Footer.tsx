@@ -18,14 +18,6 @@ export default function Footer() {
         >
           linkedin
         </a>
-        <span>-</span>
-        <a
-          href="https://twitter.com/kebabhan_"
-          target="_blank"
-          className="hover:underline"
-        >
-          X (twitter)
-        </a>
       </div>
     </div>
   );
