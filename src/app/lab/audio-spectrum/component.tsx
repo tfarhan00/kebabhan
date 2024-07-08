@@ -109,7 +109,8 @@ export default function AudioSpectrum() {
       const barsLength = audioBars.length;
       const bufferLength = analyzer.frequencyBinCount;
       const freqData = new Uint8Array(analyzer.frequencyBinCount);
-      const maxHeight = (audioCon?.clientHeight ?? 0) - 32;
+      const maxHeight = (audioCon?.clientHeight ?? 0) - 26;
+      const minHeight = 8;
       const centerIdx = Math.floor(barsLength / 2);
       const groupSize = Math.floor(bufferLength / 1.5 / barsLength);
       const leftGroup = audioBars.slice(0, Math.round(centerIdx));
@@ -132,7 +133,6 @@ export default function AudioSpectrum() {
             const normalizedHeight =
               (groupSum / (groupSize * 255)) * maxHeight * scale;
 
-            const minHeight = 12;
             const clampedHeight = Math.max(minHeight, normalizedHeight);
 
             bar.style.height = `${clampedHeight}px`;
@@ -156,7 +156,6 @@ export default function AudioSpectrum() {
             const normalizedHeight =
               (groupSum / (groupSize * 255)) * maxHeight * scale;
 
-            const minHeight = 12;
             const clampedHeight = Math.max(minHeight, normalizedHeight);
 
             bar.style.height = `${clampedHeight}px`;
@@ -253,14 +252,13 @@ export default function AudioSpectrum() {
         {/* MainVisual */}
         <div
           id="audio-container"
-          className="bg-white dark:bg-white/5 rounded-full px-4 py-2 flex items-center justify-center gap-1 h-20 shadow-lg w-72 relative overflow-hidden"
+          className="bg-white dark:bg-white/5 rounded-full px-4 py-2 flex items-center justify-center gap-1 h-20 shadow-lg w-80 relative overflow-hidden"
         >
-          {[...Array(45).keys()].map((item) => (
+          {[...Array(55).keys()].map((item) => (
             <div
               id="audio-bar"
               key={item}
-              style={{}}
-              className="w-[0.1rem] shrink-0 h-3 bg-gradient-to-b from-blue-500 to-blue-400 rounded-full"
+              className="w-[1px] shrink-0 h-3 bg-gradient-to-b from-blue-500 to-blue-400 rounded-full"
             ></div>
           ))}
         </div>
