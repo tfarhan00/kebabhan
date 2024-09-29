@@ -26,4 +26,16 @@ export const works = [
       fallback: "/assets/fallback/maintek_poster.webp",
     },
   },
+  {
+    icon: netraLogo,
+    title: "Tofuployer",
+    link: "https://tofuployer.app",
+    desc: "Super easy solana token deployer",
+    category: "Utility",
+    showcase_img: {
+      type: "img",
+      src: "/assets/images/works/tofuployer.png",
+      fallback: "",
+    },
+  },
 ];

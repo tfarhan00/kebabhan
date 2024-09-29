@@ -105,7 +105,7 @@ export default function Hero() {
                       alt={work.title}
                       fill
                       sizes="(max-width:768px) 600px, 800px"
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-contain"
                       priority={true}
                     />
                   </div>
